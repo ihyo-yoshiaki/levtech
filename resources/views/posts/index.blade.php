@@ -15,7 +15,12 @@
 	      }
 	}
     </script>
+    <x-app-layout>
+    <x-slot name="header">
+     Index
+    </x-slot>
     <body>
+        <h2> user: {{ Auth::user() }}</h2>
         <h1>Blog Name</h1>
 	<div class='posts'>
           @foreach ($posts as $post)    
@@ -40,5 +45,6 @@
 	  </div>
 	</div>
     </body>
+     </x-app-layout>
 </html>
 
