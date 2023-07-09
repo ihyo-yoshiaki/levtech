@@ -16,6 +16,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 
+
 Route::controller(PostController::class)->middleware(['auth'])->group(function(){
     Route::get('/', 'index')->name('index');
     Route::post('/posts', 'store')->name('store');
@@ -29,6 +30,7 @@ Route::controller(PostController::class)->middleware(['auth'])->group(function()
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::get('/categories/{category}', [CategoryController::class, 'index'])->middleware("auth");
 
